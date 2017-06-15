@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<link href="qd1.css" rel="stylesheet" type="text/css">
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript">
+    // JS实现选项卡切换
+    window.onload = function(){
+    var myTab = document.getElementById("tab");    //整个div
+    var myUl = myTab.getElementsByTagName("ul")[0];//一个节点
+    var myLi = myUl.getElementsByTagName("li");    //数组
+    var myDiv = myTab.getElementsByTagName("div"); //数组
+ 
+    for(var i = 0; i<myLi.length;i++){
+        myLi[i].index = i;
+        myLi[i].onclick = function(){
+            for(var j = 0; j < myLi.length; j++){
+                myLi[j].className="off";
+                myDiv[j].className = "hide";
+            }
+            this.className = "on";
+            myDiv[this.index].className = "show";
+        }
+      }
+    }
+    </script>  
+</head>
+
+<body class="body">
+<div class="d2" >	
+	<table width="613" height="53" border="0" cellpadding="0" cellspacing="0">
+	<tr id="w2">
+		<td width="151" align="center">Pretty pictures	</td>
+		<td width="151" align="center">Play strategy</td>
+		<td width="151" align="center">about us</td>
+		<td width="151" align="center">back home</td>
+	  </tr>
+  </table>
+</div>
+
+<div class="divcss5" style="background:url(bdg1.jpg)">
+<span style="font-size: 25px">八大关</span>
+    <a href="八大关.html" class="now">&nbsp;</a>
+</div> 
+<div class="d4" id="w2">
+  <h1>Hot spots top 1:八大关</h1>
+	<p>有“万国建筑博览会”之称，最能体现青岛“红瓦绿树、碧海蓝天”特点的街区</p>
+  <p>&nbsp;</p>
+</div>
+<div class="d5">
+     <img src="bdg2.jpg" width="201" height="116">
+</div>
+	<div class="d6">
+     <img src="bdg6.jpeg" width="201" height="114">
+	</div>
+	<div class="d7" id="w3">
+	<h1>Hot spots top 2: 栈桥</h1>
+	<p>青岛著名的地标建筑，长长的栈道由海边向海面延伸，是观赏海景的绝佳地点</p>
+	</div>
+<div class="d8"></div>
+	<div class="d9">
+	<img src="栈桥2.jpeg" width="200" height="125">
+	
+	</div>
+	<div class="d10">
+	<img src="栈桥4.jpeg" width="200" height="116">
+	
+	</div>
+<div class="d11">
+<h1>其他热门景点</h1>
+<img src="点赞.jpg" width="217" height="146">
+</div>
+	<div class="d12" id="w4">
+<h1>Hot spots top 3: 青岛奥林匹克帆船中心</h1>
+	<p>2008年奥运会帆船比赛的地方，现在也成为观赏落日的好去处</p>
+</div>
+	<div class="d13"></div>
+	
+<div class="d14">
+<h1>Hot spots top 4: 青岛崂山风景区</h1>
+	<p>海上第一名山，是中国海岸线上的第一高峰，青岛看日出佳地</p>
+</div>
+<div class="d15">
+<img src="崂山0.jpg" width="402" height="236">
+</div>
+<div class="d16">
+<h1  align="center">青岛必玩<br>
+  </br>四大景点:</h1>
+  <img src="top.jpg" width="181" height="151">
+</div>
+<div class="">
+<div class="div17">
+<img src="海军旧址.jpeg" width="204" height="301">
+	
+</div>
+<div class="div18" style="background:url(胶州湾大桥.jpg)">
+	<span style="font-size: 20px">胶州湾大桥<br></br>世界第一跨海大桥</span>
+	<a href="五四广场.html" class="now"></a>
+</div>
+<div class="div19" style="background:url(天珠1.jpeg)" >
+<a href="天主教堂.html"><span style="font-size: 20px">天主教堂 <br></br>青岛标志性建筑</span></a>
+</div>
+<div class="div21">
+	<img src="海水浴场.jpg" width="212" height="169">
+</div>
+<div class="div22">
+	<img src= "仰口3.jpeg" width="213"="220" height="133">
+</div>
+<div class="div23" style="background:url(542.jpeg)">
+<a href="五四广场.html"><span style="font-size: 20px">五四广场<br></br>青岛标志性建筑</span></a>
+
+</div>
+<div class="div24">
+	<img src="十梅庵.jpeg" width="188" height="194">
+</div>
+<div class="div25">
+	<img src="信号山.jpg" width="210" height="180">
+</div>
+<div class="div26" style="background:url(劈柴院.jpg)">	
+<span style="font-size: 20px">劈柴院<br>青岛特色美食街</span>
+</div>
+</div>
+<div class="div27">
+	<h1>景点分类</h1>
+	<img src="分类.jpg" width="170" height="292">
+</div>
+<div id="tab">
+	  <ul>
+        <li class="off">海水浴场</li>
+        <li class="on">名人故居</li>
+	    <li class="off">休闲公园</li>
+  </ul>
+    <div id="firstPage" class="hide">
+           <table><tr>
+            <td><a href="金沙滩.html"><img src="金沙滩.jpeg" width="200px" height="150">金沙滩</a></td>
+           <td><img src="石老人海水浴场.jpeg" width="200px" height="150">石老人海水浴场</td>
+           <td><img src="第一海水.jpeg" width="200px" height="150">第一海水浴场</td>
+         <td><img src="第二海水.jpeg" width="200px" height="150">第二海水浴场</td>
+         <td><img src="第三海水.jpeg" width="200px" height="150">第三海水浴场</td>
+      </tr></table>
+    </div>
+    <div id="secondPage" class="show">
+          <table><tr>
+            <td><img src="沈从文故居.jpeg" width="200px" height="150">沈从文故居</td>
+           <td><img src="老舍故居.jpeg" width="200px" height="150">老舍故居</td>
+           <td><img src="洪深故居.jpeg" width="200px" height="150">洪深故居</td>
+         <td><img src="康有为故居.jpeg" width="200px" height="150">康有为故居</td>
+         <td><img src="骆驼祥子.jpeg" width="200px" height="150">骆驼祥子故居</td>
+      </tr></table>
+    </div>
+    <div id="thirdPage" class = "hide">
+           <table><tr>
+            <td><img src="太平角公园.jpeg" width="200px" height="150">太平角公园</td>
+           <td><img src="中山公园.jpeg" width="200px" height="150">中山公园</td>
+           <td><img src="鲁迅公园.jpeg" width="200px" height="150">鲁迅公园</td>
+         <td><img src="老舍公园.jpeg" width="200px" height="150">老舍公园</td>
+         <td><img src="信号山公园.jpeg" width="200px" height="150">信号山公园</td>
+         </tr>
+         <tr>
+         	<td>
+      </tr></table>
+    </div>
+</div>
+<span class="d13"><img src="奥帆0.jpeg" width="411" height="242"></span><span class="d8"><a href="栈桥.html"><img src="栈桥1.jpeg" width="187" height="262"></a></span>
+<div id="container" align="center">
+  <div id="pb" align="center"><a><img src="1.jpg" width="1224" height="480" id="myImg"></a></div>
+  <ul id="haha">
+    <li class="choice"  id="img1" onMouseOver="JavaScript: show(parseInt(this.innerHTML))" onMouseOut="out();"></li>
+    <li class="choice"  id="img2" onMouseOver="javascript: show(parseInt(this.innerHTML))" onMouseOut="out();"></li>
+    <li class="choice"  id="img3" onMouseOver="javascript: show(parseInt(this.innerHTML))" onMouseOut="out();"></li>
+    <li class="choice"  id="img4" onMouseOver="javascript: show(parseInt(this.innerHTML))" onMouseOut="out();"></li>
+    <li class="choice"  id="img5" onMouseOver="javascript: show(parseInt(this.innerHTML))" onMouseOut="out();"></li>
+    <li class="choice"  id="img6" onMouseOver="javascript: show(parseInt(this.innerHTML))" onMouseOut="out();"></li>
+    <div style="float:none">
+    <div>
+  </ul>
+</div>
+</body>
+<script type="text/javascript">
+  function $(obj){
+return document.getElementById(obj);
+  }
+    //启动网页，初始播放第一张图片
+var currentImg=1;
+//总共有三张图片需要播放
+var maxImg=6;
+    //没2000毫秒播放一张图片
+var yaya =setInterval("show()",2000);
+// 根据传入的数值，判断播放哪一张图片
+ 
+function show(num){
+   //判断是否传入的是一个数值（当点击li中内容时候，传入的是数值；否则没有点击Li时候，没有传入数值，判断条件为false）
+        if(Number(num)){
+//清除定时器
+clearTimeout(yaya);
+//将当前要播放的图片设置为点击li所要表达的图片，例如如果点击id="img2"的，currentImg=2;
+currentImg=num;
+}
+//currentImg代表的图片显示，其他的不显示
+for(var i=1;i<=maxImg;i++){
+if (currentImg==i)
+{
+ var name="img"+i;
+ $("myImg").src=""+i+".jpg";
+ $(name).className="choosen";
+}else{
+ var name="img"+i;
+
+ $(name).className="choice";
+}
+}
+//如果当前播放时最后一张图片，currentImg改为第一张
+        if(currentImg==maxImg){
+currentImg=1;
+}
+else{
+currentImg++; 
+}
+}
+
+
+       //光标离开li后，恢复计时器
+function out(){
+clearTimeout(yaya);
+yaya=setInterval("show();",2000);
+}
+  
+//window.onload= setInterval("show();",2000);
+  </script>
+</html>
