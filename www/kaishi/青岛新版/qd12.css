@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+.di2{
+	width: 546px;
+	height: 283px;
+	position: absolute;
+	left: 564px;
+	top: 414px;
+}
+.di3{width=282px;
+	height=257px;
+	position: absolute;
+	width: 265px;
+	height: 224px;
+	left: 567px;
+	top: 152px;
+}
+.di4{width=282px;
+	height=257px;
+	position: absolute;
+	left: 663px;
+	width: 369px;
+	height: 93px;
+	top: 13px;
+}
+.di5{width=500px;
+	height=257px;
+	position: absolute;
+	width: 254px;
+	height: 220px;
+	left: 842px;
+	top: 154px;
+	
+}
+.di7{width=500px;
+	height=257px;
+	position: absolute;
+	left: 565px;
+	width: 540px;
+	height: 59px;
+	top: 779px;
+	
+}
+.di6{width=282px;
+	height=257px;
+	position: absolute
+}
+#ww1{
+	font: Segoe, Segoe UI, DejaVu Sans, Trebuchet MS, Verdana," sans-serif";
+	font-size: 20px;
+	font-family: acme
+}
+#ww2{
+	font-size: 50px;
+}

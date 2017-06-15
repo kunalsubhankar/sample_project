@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+        .dowebok { margin: 0 auto;}
+        .dowebok ul { list-style-type: none;}
+        .dowebok .row { font-size: 0; text-align: center;}
+        .dowebok .wow { display: inline-block; width: 280px; height: 280px; margin: 30px 15px 0;  font: 30px/280px "Microsoft Yahei"; vertical-align: top; *display: inline; zoom: 1;}
+        .bg-green { background: #5bd5a0;}
+        .bg-blue { background: #1daee9;}
+        .bg-purple { background: #c843a5;}
+        .bg-red { background: #eb3980;}
+        .bg-yellow { background: #ffcc35;}
+        #container2{
+            min-width:600px;
+            min-height:767px;
+        }
+        #allmap {min-width:600px;
+            min-height:767px;}
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aQ1ZiMSB7DoVK4xHZ3lFAYI8hOiG2uGv"></script>
+    <script type="text/javascript">
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(120.3894155065, 36.0724882031);
+        map.centerAndZoom(point, 15);
+
+        var json_data = [[120.3270237707,36.0643752037],[120.3305734394,36.0589562141],[120.3596965862,36.0573975786],[120.3913808721,36.0682998474],[120.6043525789,36.2172882927],[120.6080958596,36.1484922865],[120.3389772784,36.0711220765]];
+        var pointArray = new Array();
+        for(var i=0;i<json_data.length;i++){
+            var marker = new BMap.Marker(new BMap.Point(json_data[i][0], json_data[i][1])); // 创建点
+            map.addOverlay(marker);    //增加点
+            pointArray[i] = new BMap.Point(json_data[i][0], json_data[i][1]);
+            marker.addEventListener("click",attribute);
+        }
+        //让所有点在视野范围内
+        map.setViewport(pointArray);
+        //获取覆盖物位置
+        function attribute(e){
+            var p = e.target;
+            if (p.getPosition().lng==120.3270237707&&p.getPosition().lat==36.0643752037) alert("这是栈桥");
+            if (p.getPosition().lng==120.3305734394&&p.getPosition().lat==36.0589562141) alert("这是小青岛公园");
+            if (p.getPosition().lng==120.3596965862&&p.getPosition().lat==36.0573975786) alert("这是八大关");
+            if (p.getPosition().lng==120.3913808721&&p.getPosition().lat==36.0682998474) alert("这是五四广场");
+            if (p.getPosition().lng==120.6043525789&&p.getPosition().lat==36.2172882927) alert("这是北九水");
+            if (p.getPosition().lng==120.6080958596&&p.getPosition().lat==36.1484922865) alert("这是崂山风景名胜区");
+            if (p.getPosition().lng==120.3389772784&&p.getPosition().lat==36.0711220765) alert("这是迎宾馆");
+        }
+    </script>
+
+
+
+
+
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+    <script src="js/wow.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aQ1ZiMSB7DoVK4xHZ3lFAYI8hOiG2uGv"></script>
+    <style type="text/css">
+        #panorama {height: 300px; width: 300px; overflow: hidden;}
+        #normal_map {height:300px; width: 300px; overflow: hidden;}
+    </style>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+            new WOW().init();
+        };
+    </script>
+    <script>
+
+        window.onload = function(){
+
+//直接加载地图
+
+
+            //初始化地图函数  自定义函数名init
+            function init() {
+                //定义map变量 调用 qq.maps.Map() 构造函数   获取地图显示容器
+                var map = new qq.maps.Map(document.getElementById("container2"), {
+                    center: new qq.maps.LatLng(36.0702900000,120.4220800000),      // 地图的中心地理坐标。
+                    zoom:20                                                 // 地图的中心地理坐标。
+                });
+            }
+
+            //调用初始化函数地图
+            init();
+
+
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Travelling with Henry</title>
+
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400">
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Mystyle.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+
+
+        #container2{
+            min-width:600px;
+            min-height:767px;
+        }
+    </style>
+   
+</head>
+    <body id="top" class="page-2">
+
+        <div class="tm-navbar-container tm-navbar-container-dark">
+       
+            <nav class="navbar navbar-full navbar-fixed-top bg-inverse">
+                <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                    &#9776;
+                </button>
+                <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="index_CN.html" class="nav-link external">我的主页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#top" class="nav-link">纵观青岛</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tm-section-3" class="nav-link">商业热圈</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a href="#tm-section-4" class="nav-link">预订门票</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tm-section-7" class="nav-link">导游租车</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+        <div class="container-fluid">
+
+            <div  class="wow bounceInDown">
+                <div class="row">
+                    <div id="tm-section-1" class="tm-section">
+                        <div class="col-md-12">
+                            <h1 class="text-xs-center blue-text tm-page-2-title">纵观青岛</h1>
+
+                            <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">
+                                美丽的海滨城市以及美好的旅行体验 <br>
+
+                            </p>
+                            <img src="http://i4.piimg.com/597066/f6ce79ae3c04714a.jpg" class="img-fluid tm-banner-img" alt="Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <div class="row">
+                <div class="tm-section" id="tm-section-2">
+                    <div class="wow pulse ">
+                        <div class="col-md-12">
+                            <p class="text-left tm-description">
+                                青岛依山傍海，风光秀丽，气候宜人。红瓦、绿树、碧海、蓝天交相映出青岛美丽的身姿；赤礁、细浪、彩帆、金色沙滩构成青岛美丽的风景线；历史、宗教、民俗、风土人情、节日庆典赋予了青岛旅游丰富的文化内涵。浓缩近代历史文化的名人故居；具有典型欧式风格的各国建筑，形成了在中西合璧的特色。
+                                <p class="text-left tm-description">
+                            青岛以海鲜为主的独特饮食，新鲜清淡为特色，备受欢迎。崂山绿石，天然珍珠，精巧的草制工艺品，更受旅游者的青睐。青岛还是闻名海内外的青岛啤酒的原产地，游人在这里可以品尝到正宗新鲜的青岛啤酒。 </p>
+                            <div class="tm-flex-center">
+                                <a href="#tm-section-4" class="btn btn-default btn-lg tm-gray-btn">查看细节</a>
+                                <a href="#" class="btn btn-default btn-lg tm-gray-bordered-btn">美食之都</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+      
+            <div class="row">
+                <div class="tm-section wow rollIn" id="tm-section-3">
+                    
+                    <div class="col-md-6 margin-bottom-sm-8">  
+                        <div class="tm-2-col-box-left">
+                            <img src="http://i1.buimg.com/597066/114c737a4bd1e85c.jpg" alt="Image" class="img-fluid tm-img-2-col">
+                        
+                            <p class="text-left tm-description">作为空前发展的超级大都市，很多商家聚焦青岛的热点地区，投入资金进入这座大城市，青岛商圈提供给您一种超级现代化体验。
+                               </p>
+                            <p class="text-left tm-description">商圈近年正在不断扩大，包括万象城，万达广场，金狮广场，凯德广场，以及金鼎广场。
+                                </p>
+                        </div> 
+                    </div>  
+
+                    <div class="col-md-6">
+                        <div>
+                            <img src="http://i1.buimg.com/597066/97a45d7e4125525d.jpg" alt="Image" class="img-fluid tm-img-2-col">
+                   
+                            <table class="table table-striped">
+                                <tbody>
+                                   <tr>
+                                        <td><strong>商场内您可以购买...</strong></td>
+                                        <td>楼层</td>
+                                    </tr>
+                                    <tr>
+                                        <td>潮流时装</td>
+                                        <td>F1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>婴儿用品</td>
+                                        <td>F2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>家电用品</td>
+                                        <td>F3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>奢侈品牌</td>
+                                        <td>F4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>电影观赏</td>
+                                        <td>F5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+      <div class="row wow swing">
+                <div class="tm-section ">
+                    <div class="col-md-4 margin-bottom-sm-3">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/62454613e77780e5.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>栈桥 :</strong><br>
+                                    前海栈桥是青岛的象征，建于1891年，时为简易军用码头，几经重修，向游人开放。现栈桥长440米，名曰“回澜阁”。堤岸是景色如画的栈桥公园，花木掩映，藤绕长廊，可远眺小青岛绿岛葱茏、白塔玉立之美景，是游人观光游憩的好地方。<br>
+                                    <strong>交通路线：2，5，8，25，26，316，321路公交车</strong>
+                                    <br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4 margin-bottom-sm-3 bounceInLeft">
+
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/e88f1ca51583d8e6.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>小青岛公园 :</strong><br>
+                                    因形似古琴，亦称琴岛。岛上洁白的灯塔亭亭玉立，为本世纪初德国人建造。小岛山岩耸秀，林木婆娑。夜幕低垂时，可欣赏“琴屿飘灯”之胜景。<br>
+                                    <strong>交通路线：6，26，316，231，202，501，801</strong>
+                                    <br><br><br><br><br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div>                                                
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/e0953c914d5eea89.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>八大关 :</strong><br>
+                                    位于汇泉角和太平角之间，濒临波光涟漪的太平湾。200余幢异国风格的别墅掩映于花木丛中。被称为“万国建筑博物馆”。其间10条马路始建于1931年，路栽雪松、紫薇、碧桃各不相同。其中8条马路以中国著名关隘命名。故名“八大关”。<br>
+                                    <strong>交通路线：15、26、31、202路公交车</strong>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div>                        
+                        
+                    </div>
+                </div>        
+            </div>
+            
+            <div class="row wow lightSpeedIn">
+                <div class="tm-section" >
+                    <div class="col-md-4 margin-bottom-sm-3">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/cabff4b74617aac9.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>五四广场 :</strong><br>
+                                    为纪念“五四运动”命名，广场由市政厅广场、中心广场、海滨公园三部分组成。其间雕塑荟萃，喷泉吐玉松柏苍郁，花草吐翠，气势恢宏，典雅壮美，及富青岛特色和现代精神。<br>
+                                    <strong>交通路线：25，26，31，104，202</strong>
+                                    <br><br>
+                                    <br><br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4 margin-bottom-sm-3">
+
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/db016c7b55d5e6e4.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                               <p class="tm-description-text">
+									<strong>崂山:</strong><br>
+                                   崂山是国家级风景名胜区，是国家首批AAAA级旅游区。位于青岛市区东部，总面积446平方公里。崂山自古被称誉为神窟仙宅，灵异之府，是道教传播发祥地之一，盛时有九宫八观七十二庵之说。崂山无严寒， 夏无酷暑，山海相连，风景如画，是全国著名的旅游和度假休闲胜地。<strong><br>交通路线：
+                                   <br>1.去南线：A. 崂山旅游专线,俗成802路,从团岛发往垭口. B.304路,从轮渡发往垭口. C.104路 从台东发往流清
+                                   <br>2.去北线: A. 312路, 从路动发往仰口. B. 109路,从李村发往仰口. C. 123路，从李村发往仰口. D. 106路,从李村经仰口至垭口.
+                                   <br>3.去中线: A.311路, 从轮渡发往北九水. B.110路, 从胎动发往北九水.</strong>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div>                                                
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/660b1bf108d180f6.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>迎宾馆:</strong><br>
+                                    典型的德国古堡式建筑，居我国单体别墅前列。因此处为德国驻青总督官邸，俗称“提督楼”。1934年定名为“迎宾馆”，成为接待国内外军政要员的重要馆舍。 <br> <strong>交通路线：1，25，221，225，228路公交车</strong><br><br><br>
+                                </p>
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div>                        
+                        
+                    </div>
+                </div>        
+            </div>
+            
+            <div class="row wow lightSpeedIn ">
+                <div class="tm-section" id="tm-section-4">
+                    <div class="col-md-4 margin-bottom-sm-3">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/1359ea2acdc18045.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>奥帆中心:</strong><br>
+                                    建设滨海步行道是迎办2008年奥运会的重点项目之一。这一工程为中外游客提供了一条亲近大海、拥抱海洋的靓丽风景线。滨海步行道西起团岛，东至石老人旅游度假区，全长越40公里。滨海步行道横穿青岛市的新、老市区和高科技工业园，途经沿海岸线的瞿塘峡路、太平路、南海路、汇泉路、山海关路、黄海路、太平角一路和东海路等路段，一路行来，如诗如画的海滨风景，美不盛收。<strong>Go by bus: No.208, No.25, No. 221, No.225, No.228</strong><br><br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div> 
+                    </div>
+                
+                    <div class="col-md-4 margin-bottom-sm-3">
+
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/ea470d11d99c26d0.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>青岛极地海洋世界:</strong><br>
+                                    没来过青岛极地海洋世界，别说你到过青岛，展现了青岛丰富的海洋生物<br><strong>交通路线： No.208, No.25, No. 221, No.225, No.228</strong>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div>                                                
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/9d5bd3d051341331.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>Lutheran Church & Catholic Church（基督教堂和天主教堂）:</strong><br>
+                                    天主教堂位于浙江路，全名“圣弥爱尔教堂”。1934年由的国人建成，占地2470平方米，总高60余米，庄严宏丽，为我国著名天主教堂之一。周五晚上18：30—20：30，周六上午6：30—7：30在教堂举行教会活动。基督教堂1910年建成，德国古堡式建筑。教堂由钟楼、礼拜堂两部分组成。<strong>交通线路: No 1, No.214, No. 217, No.220, No.221</strong><br><br><br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-btn">详情</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a>
+                                </div>
+                                    
+                            </div>
+                        </div>                        
+                        
+                    </div>
+                </div>        
+            </div>
+
+            <div class="row">
+                <div class="tm-section" id="tm-section-5">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h3 class="blue-text">景点价目表</h3>
+
+                        <table class="table table-striped tm-full-width-large-table">
+                            <thead>
+                            <tr>
+                                <th>热度排行</th>
+                                <th>景点名称</th>
+                                <th>景区等级</th>
+                                <th>价格</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>栈桥</td>
+                                <td>AAAA</td>
+                                <td>¥20</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>小青岛公园</td>
+                                <td>AAAA</td>
+                                <td>¥30</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>八大关</td>
+                                <td>AAA</td>
+                                <td>¥10</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>五四广场</td>
+                                <td>AAAAA</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>崂山</td>
+                                <td>AAAAA</td>
+                                <td>¥120</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>迎宾馆</td>
+                                <td>AAA</td>
+                                <td>¥10</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>奥帆中心</td>
+                                <td>AAA</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>青岛极地海洋世界</td>
+                                <td>AAAA</td>
+                                <td>¥60</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>基督教堂和天主教堂</td>
+                                <td>AAAA</td>
+                                <td>Free</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> <!-- tm-section -->
+            </div>
+
+            <div class="container-fluid">
+
+                <div class="row ">
+                    <div id="tm-section-7" class="tm-section">
+                        <div class="col-md-12">
+                            <h1 class="text-xs-center blue-text tm-page-2-title">导游服务及租车服务</h1>
+                            <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">
+                               让我们提供给您温暖的服务和贴心的如家感受! <br>
+
+                            </p>
+                            <img src="http://i2.muimg.com/597066/ae93bd22115ab259.jpg" class="img-fluid tm-banner-img" alt="Image">
+                            <img src="http://i2.muimg.com/597066/fc1aa3c16da0abeb.jpg" class="img-fluid tm-banner-img" alt="Image">
+                            <img src="http://i2.muimg.com/597066/5d57f61cbba5add4.png" class="img-fluid tm-banner-img" alt="Image">
+                            <img src="http://i2.muimg.com/597066/791861ed8fa4b61d.png" class="img-fluid tm-banner-img" alt="Image">
+                            <img src="http://i2.muimg.com/597066/d17bb15a1b1918e2.png" class="img-fluid tm-banner-img" alt="Image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="tm-section" id="tm-section-8">
+                        <div class="col-md-12">
+                            <p class="text-left tm-description">
+                                我们的导游可以提供中文服务和英语服务，如果您想要其他语言，我们也可以提供，价格是适当的，这是可以接受的大多数人访问我们。我们一定会给你最好的体验，让你对这个城市有更多的了解，你会爱上海边美丽的城市。</p>
+                            <p class="text-left tm-description">
+                                我们不会提供任何购物服务，所有的购物活动都由你们自己，我们的导游会建议你购物的合适的地方，我们为您提供汽车租赁服务，这将方便您走的路线我们推荐不考虑运输问题。</p>
+                            <div class="tm-flex-center">
+                                <a href="#tm-section-9" class="btn btn-default btn-lg tm-gray-btn">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="tm-section" id="tm-section-9">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h3 class="blue-text">服务价目表:</h3>
+
+                            <table class="table table-striped tm-full-width-large-table">
+                                <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>服务项目</th>
+                                    <th>价格</th>
+                                    <th>现在预定</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>导游服务（中文）</td>
+                                    <td>¥100/天</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>英语翻译</td>
+                                    <td>¥230/天</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>汽车租赁（无司机）</td>
+                                    <td>¥150/天起</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>汽车租赁（含司机）</td>
+                                    <td>¥280/天起</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>机场接机／送机服务</td>
+                                    <td>¥80/次</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">现在预定</a></td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- tm-section -->
+                </div>
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div id="tm-section-11" class="tm-section">
+                            <div class="col-md-12">
+                                <h1 class="text-xs-center blue-text tm-page-2-title">青岛地图</h1>
+                                <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">
+                                    为了您方便出行，请仔细查看下面的地图 <br>
+                                <div id="container2"></div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <p class="text-xs-center tm-footer-text">Copyright &copy; 2017 Henry Fordham</p>
+                </div>
+            </div>
+        </div> <!-- .container -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content modal-popup">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title"></h2>
+          <h2 class="modal-title"></h2>
+          <h2 class="modal-title"></h2>
+          <h2 class="modal-title"></h2>
+        </div>
+        <form action="#" method="post">
+          <br><br><br><br><br>
+          <br><br><br><br><br>
+        </form>
+
+        <h2 class="modal-title">请通过支付宝扫码付款.</h2>
+      </div>
+  </div>
+</div>
+        <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+        <script src="js/MyJs.js"></script>
+
+        <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->           
+
+        <!-- Templatemo scripts -->
+        <script>     
+         
+            $(document).ready(function(){
+                var mobileTopOffset = 54;
+                var tabletTopOffset = 74;
+                var desktopTopOffset = 79;
+                var topOffset = desktopTopOffset;
+
+                if($(window).width() <= 767) {
+                    topOffset = mobileTopOffset;
+                }
+                else if($(window).width() <= 991) {
+                    topOffset = tabletTopOffset;
+                }
+              
+                /* Single page nav
+                -----------------------------------------*/
+                $('#tmNavbar').singlePageNav({
+                    'currentClass' : "active",
+                    offset : topOffset,
+                    'filter': ':not(.external)'
+                }); 
+
+                if($(window).width() < 570) {
+                    $('.tm-full-width-large-table').addClass('table-responsive');
+                }
+                else {
+                    $('.tm-full-width-large-table').removeClass('table-responsive');   
+                }
+              
+
+                /* Collapse menu after click 
+                -----------------------------------------*/
+                $('#tmNavbar a').click(function(){
+                    $('#tmNavbar').collapse('hide');
+                });
+                /* Handle nav offset & table responsive upon window resize
+                --------------------------------------------------------------*/
+                $(window).resize(function(){
+                    
+                    if($(window).width() < 768) {
+                        topOffset = mobileTopOffset;
+                    } 
+                    else if($(window).width() <= 991) {
+                        topOffset = tabletTopOffset;
+                    }
+                    else {
+                        topOffset = desktopTopOffset;
+                    }
+
+                    $('#tmNavbar').singlePageNav({
+                        'currentClass' : "active",
+                        offset : topOffset,
+                        'filter': ':not(.external)'
+                    });
+
+                    if($(window).width() < 570) {
+                        $('.tm-full-width-large-table').addClass('table-responsive');
+                    }
+                    else {
+                        $('.tm-full-width-large-table').removeClass('table-responsive');   
+                    }
+                });
+            });
+
+        </script>    
+    </body>
+</html>

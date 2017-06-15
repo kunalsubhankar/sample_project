@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+        .dowebok { margin: 0 auto;}
+        .dowebok ul { list-style-type: none;}
+        .dowebok .row { font-size: 0; text-align: center;}
+        .dowebok .wow { display: inline-block; width: 280px; height: 280px; margin: 30px 15px 0;  font: 30px/280px "Microsoft Yahei"; vertical-align: top; *display: inline; zoom: 1;}
+        .bg-green { background: #5bd5a0;}
+        .bg-blue { background: #1daee9;}
+        .bg-purple { background: #c843a5;}
+        .bg-red { background: #eb3980;}
+        .bg-yellow { background: #ffcc35;}
+        #container2{
+            min-width:600px;
+            min-height:767px;
+        }
+        #allmap {min-width:600px;
+            min-height:767px;}
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aQ1ZiMSB7DoVK4xHZ3lFAYI8hOiG2uGv"></script>
+    <script type="text/javascript">
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(120.3894155065, 36.0724882031);
+        map.centerAndZoom(point, 15);
+
+        var json_data = [[120.3270237707,36.0643752037],[120.3305734394,36.0589562141],[120.3596965862,36.0573975786],[120.3913808721,36.0682998474],[120.6043525789,36.2172882927],[120.6080958596,36.1484922865],[120.3389772784,36.0711220765]];
+        var pointArray = new Array();
+        for(var i=0;i<json_data.length;i++){
+            var marker = new BMap.Marker(new BMap.Point(json_data[i][0], json_data[i][1])); // 创建点
+            map.addOverlay(marker);    //增加点
+            pointArray[i] = new BMap.Point(json_data[i][0], json_data[i][1]);
+            marker.addEventListener("click",attribute);
+        }
+        //让所有点在视野范围内
+        map.setViewport(pointArray);
+        //获取覆盖物位置
+        function attribute(e){
+            var p = e.target;
+            if (p.getPosition().lng==120.3270237707&&p.getPosition().lat==36.0643752037) alert("It's Zhanqiao Pier");
+            if (p.getPosition().lng==120.3305734394&&p.getPosition().lat==36.0589562141) alert("It's Little Qingdao Island");
+            if (p.getPosition().lng==120.3596965862&&p.getPosition().lat==36.0573975786) alert("It's Eight Great Passes");
+            if (p.getPosition().lng==120.3913808721&&p.getPosition().lat==36.0682998474) alert("It's May 4th Square");
+            if (p.getPosition().lng==120.6043525789&&p.getPosition().lat==36.2172882927) alert("It's North Nine Waters");
+            if (p.getPosition().lng==120.6080958596&&p.getPosition().lat==36.1484922865) alert("It's Laoshan Scenic Area");
+            if (p.getPosition().lng==120.3389772784&&p.getPosition().lat==36.0711220765) alert("It's Guest House");
+        }
+    </script>
+
+
+
+
+
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+    <script src="js/wow.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aQ1ZiMSB7DoVK4xHZ3lFAYI8hOiG2uGv"></script>
+    <style type="text/css">
+        #panorama {height: 300px; width: 300px; overflow: hidden;}
+        #normal_map {height:300px; width: 300px; overflow: hidden;}
+    </style>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+            new WOW().init();
+        };
+    </script>
+    <script>
+
+        window.onload = function(){
+
+//直接加载地图
+
+
+            //初始化地图函数  自定义函数名init
+            function init() {
+                //定义map变量 调用 qq.maps.Map() 构造函数   获取地图显示容器
+                var map = new qq.maps.Map(document.getElementById("container2"), {
+                    center: new qq.maps.LatLng(36.0702900000,120.4220800000),      // 地图的中心地理坐标。
+                    zoom:20                                                 // 地图的中心地理坐标。
+                });
+            }
+
+            //调用初始化函数地图
+            init();
+
+
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Travelling with Henry</title>
+
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400">
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Mystyle.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+
+
+        #container2{
+            min-width:600px;
+            min-height:767px;
+        }
+    </style>
+   
+</head>
+    <body id="top" class="page-2">
+
+        <div class="tm-navbar-container tm-navbar-container-dark">
+       
+            <nav class="navbar navbar-full navbar-fixed-top bg-inverse">
+                <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                    &#9776;
+                </button>
+                <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link external">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#top" class="nav-link">Overall</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tm-section-3" class="nav-link">Bussiness</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a href="#tm-section-4" class="nav-link">View&Book</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tm-section-7" class="nav-link">Guide&Car</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+        <div class="container-fluid">
+
+            <div  class="wow bounceInDown">
+                <div class="row">
+                    <div id="tm-section-1" class="tm-section">
+                        <div class="col-md-12">
+                            <h1 class="text-xs-center blue-text tm-page-2-title">TsingsTao's Outlook</h1>
+
+                            <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">
+                                Beautiful seashore and fasinating travelling experience. <br>
+
+                            </p>
+                            <img src="http://i4.piimg.com/597066/f6ce79ae3c04714a.jpg" class="img-fluid tm-banner-img" alt="Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <div class="row">
+                <div class="tm-section" id="tm-section-2">
+                    <div class="wow pulse ">
+                        <div class="col-md-12">
+                            <p class="text-left tm-description">
+                                Qingdao has beautiful scenery and pleasant climate. A harmonious picture of mountains, sea and city is painted in which one can see the winding coastline, islands and beautiful buildings whose red-roofs are held in the embrace of verdant trees. Many of the European-style buildings used to be home to many famous figures.
+                            </p>
+                            <p class="text-left tm-description">
+                                Qingdao is famous in China for its delicious fresh seafood. The Laoshan Scenic Area has an important position in sightseeing because of its beautiful scenery, natural pearls and exquisite crafts. Qingdao beer (Tsingtao beer), a popular beer brand in the world, is produced in Qingdao, allowing tourists to easily get the freshest Qingdao Beer in Qingdao.
+                            </p>
+                            <div class="tm-flex-center">
+                                <a href="#tm-section-4" class="btn btn-default btn-lg tm-gray-btn">View Details</a>
+                                <a href="#" class="btn btn-default btn-lg tm-gray-bordered-btn">Delicious Food</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+      
+            <div class="row">
+                <div class="tm-section wow rollIn" id="tm-section-3">
+                    
+                    <div class="col-md-6 margin-bottom-sm-8">  
+                        <div class="tm-2-col-box-left">
+                            <img src="http://i1.buimg.com/597066/114c737a4bd1e85c.jpg" alt="Image" class="img-fluid tm-img-2-col">
+                        
+                            <p class="text-left tm-description">
+                                As development of the metropolitan city, Qingdao, Many Businnessman view the opportunity of catching money, infuse their capitality into the big city.
+                            </p>
+                            <p class="text-left tm-description">
+                                The Bussiness circle are enlarging year by year, including the Mixc, Wanda Plaza, Jinshi Mall, Kaide Mall, Jin Ding Mall,etc.
+                            </p>   
+                        </div> 
+                    </div>  
+
+                    <div class="col-md-6">
+                        <div>
+                            <img src="http://i1.buimg.com/597066/97a45d7e4125525d.jpg" alt="Image" class="img-fluid tm-img-2-col">
+                   
+                            <table class="table table-striped">
+                                <tbody>
+                                   <tr>
+                                        <td><strong>Stuff you can see</strong></td>
+                                        <td>Floor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fashionable Clothes</td>
+                                        <td>F1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Toy&Baby</td>
+                                        <td>F2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Electrical Appliances</td>
+                                        <td>F3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luxury&Cosmetics</td>
+                                        <td>F4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cinema</td>
+                                        <td>F5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+      <div class="row wow swing">
+                <div class="tm-section ">
+                    <div class="col-md-4 margin-bottom-sm-3">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/62454613e77780e5.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>Zhanqiao Pier(栈桥) :</strong><br>
+                                    Zhanqiao Pier, built in 1891, is the symbol of Qingdao. After several restorations, from being a simple military harbor, it is now open to tourists. The pier is 440 meters long. There is an octagonal pagoda of distinctive Chinese style, called “ Huilan Pagoda”, at the end of the pier. From the top, tourists can fully view the Maganificent Sea. Along the shore is the beautiful Pier Park, which is a pleasant and quiet place for tourists to rest or enjoy the scenery of Little Qingdao Island and its white tower.
+                                    <br>
+                                    <strong>Go by bus: No.2, No.5, No.8, No.25, No.26, No. 316, No.321</strong>
+                                    <br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4 margin-bottom-sm-3 bounceInLeft">
+
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/e88f1ca51583d8e6.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>Little Qingdao Island(小青岛公园) :</strong><br>
+                                    Whose shape is like an ancient violin is also called “violent Isle”. Germany built the white lighthouse on the isle at the beginning of this century. Its light reflected on the sea makes quite a spectacle at night, so much so that it has become known as “floating light of Isle”.
+                                    <br>
+                                    <strong>Go by bus: No.6, No.26, No.316, No.231, No.202, No.501, and No.801</strong>
+                                    <br><br><br><br><br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div>                                                
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/e0953c914d5eea89.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>Eight Great Passes(八大关） :</strong><br>
+                                    Lying between Huiquan Cape and Taiping Cape, Badaguan faces the rippling Taiping Bay. In the Badaguan area, more than 200 villas of exotic style are scattered among the lush old-growth flora. There are so many villas that the scenic spot is considered a World Architecture Museum. Criss-crossing the scenic area are ten roads built in 1931 and lined with many varieties of trees including peaches, crabapples, pine trees and ginkgo. Eight of the roads are named after the eight great passes of the Great Wall, hence the name Badaguan.
+                                    <br>
+                                    <strong>Go by bus: No.15, No.26, No.31, and No.202</strong>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div>                        
+                        
+                    </div>
+                </div>        
+            </div>
+            
+            <div class="row wow lightSpeedIn">
+                <div class="tm-section" >
+                    <div class="col-md-4 margin-bottom-sm-3">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/cabff4b74617aac9.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>May 4th Square(五四广场） :</strong><br>
+                                    This square is named to honor the May 4th Movement which took place in 1919. Consisting of two squares and a park, the area is decorated with statues and fountains and surrounded by pine trees, meadows, and flowers. It has become the symbol of modern Qingdao.
+                                    <br>
+                                    <strong>Go by bus: No. 25, No.26, No. 31, No.104, No.202</strong>
+                                    <br><br>
+                                    <br><br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4 margin-bottom-sm-3">
+
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/db016c7b55d5e6e4.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                               <p class="tm-description-text">
+									<strong>Laoshan Scenic Area(崂山） :</strong><br>
+                                    The Laoshan Scenic Area was one of China’s first major scenic resorts to receive the approval of the State Council. It holds an important position in Qingdao’s tourism industry. The acceleration of its natural landscape development and improved access to its cultural facilities is an important component of the city’s Olympic endeavors. Major tourist spots include the Laoshan Kangcheng Academy, the Jufeng Scenic Area and Nine Waters& Eighteen Pools.
+                                    <strong>Go by bus: No. 802, No.304, No. 104, No.312, No.109</strong>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div>                                                
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/660b1bf108d180f6.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>Guest House(迎宾馆） :</strong><br>
+                                    Architecturally reminiscent of a classic German castle. The delicate shape, splendid ornaments, graceful lines and bold colors make The Guest House one of the best examples of nonnumeric villas in China. Originally, it was the official residence of the German governor in Qingdao. In 1934, it was formally renamed “Guest House”, and has become important as a retreat to receive VIPs in military affairs and politics.
+                                    <strong>Go by bus: No.1, No.25, No. 221, No.225, No.228</strong><br><br><br>
+                                </p>
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div>                        
+                        
+                    </div>
+                </div>        
+            </div>
+            
+            <div class="row wow lightSpeedIn ">
+                <div class="tm-section" id="tm-section-4">
+                    <div class="col-md-4 margin-bottom-sm-3">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/1359ea2acdc18045.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>Qingdao Olympic Sailing Center（奥帆中心）:</strong><br>
+                                    Qingdao Olympic Sailing Center is located at the bank of Qingdao Fushan Bay.The center is at the foot of the mountain and at the same time facing the sea .So,without any doubt, its scenery is  very beautiful.The sailing race of Beijing 2008 Olympic Games and 13th Paralympic Games  were both held  there.This shows how important the centre is for Qingdao and even for China.
+                                    <strong>Go by bus: No.208, No.25, No. 221, No.225, No.228</strong><br><br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-blue-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div> 
+                    </div>
+                
+                    <div class="col-md-4 margin-bottom-sm-3">
+
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/ea470d11d99c26d0.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>Qingdao Polar Ocean World（青岛极地海洋世界）:</strong><br>
+                                    Qingdao Polar Ocean World is one of the most famous scenic spots in Qingdao.In Qingdao there is a saying that if you don't visit Qingdao Polar Ocean World,please do not tell others you really come to Qingdao. The Qingdao Polar Ocean World, the official authorization, discount tickets year-round agency.A man handed a rose to his girlfriend while submerged seven meters under water at the Qingdao Polar Ocean World on the day before Valentine’s Day.
+                                    <strong>Go by bus: No.208, No.25, No. 221, No.225, No.228</strong>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-gray-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div>                                                
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="tm-3-col-box">
+                            <img src="http://i4.piimg.com/597066/9d5bd3d051341331.jpg" alt="Image" class="img-fluid">
+                        
+                            <div class="tm-description-box">
+                                <p class="tm-description-text">
+									<strong>Lutheran Church & Catholic Church（基督教堂和天主教堂）:</strong><br>
+                                     Catholic Church located on Zhejiang Road, the Catholic Church, originally named St.Michael’s, was built by the Germans in 1934. The 60-meter-high building, covering 2470sq.m, is one of China famous Catholic Churches.Lutheran Church is built in 1910 in the style of a German castle, the building features a bell tower and an auditorium.
+                                    <strong>Go by bus: No 1, No.214, No. 217, No.220, No.221</strong><br><br><br><br><br>
+                                </p>
+                                
+                                <div class="tm-flex-center">
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-btn">Read</a>
+                                    <a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Book</a>    
+                                </div>
+                                    
+                            </div>
+                        </div>                        
+                        
+                    </div>
+                </div>        
+            </div>
+        
+            <div class="row wow lightSpeedIn">
+                <div class="tm-section" id="tm-section-5">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h3 class="blue-text">Price List of beautiful Landscape:</h3>
+              
+                        <table class="table table-striped tm-full-width-large-table">
+                            <thead>
+                                <tr>
+                                    <th>Hot</th>
+                                    <th>Scenery Name</th>
+                                    <th>Degree</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Zhanqiao Pier(栈桥)</td>
+                                    <td>AAAA</td>
+                                    <td>¥20</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Little Qingdao Island(小青岛公园)</td>
+                                    <td>AAAA</td>
+                                    <td>¥30</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Eight Great Passes(八大关）</td>
+                                    <td>AAA</td>
+                                    <td>¥10</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>May 4th Square(五四广场）</td>
+                                    <td>AAAAA</td>
+                                    <td>Free</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Laoshan Scenic Area(崂山）</td>
+                                    <td>AAAAA</td>
+                                    <td>¥120</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Guest House(迎宾馆）</td>
+                                    <td>AAA</td>
+                                    <td>¥10</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Qingdao Olympic Sailing Center（奥帆中心）</td>
+                                    <td>AAA</td>
+                                    <td>Free</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Qingdao Polar Ocean World（青岛极地海洋世界）</td>
+                                    <td>AAAA</td>
+                                    <td>¥60</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Lutheran Church & Catholic Church（基督教堂和天主教堂）</td>
+                                    <td>AAAA</td>
+                                    <td>Free</td>
+                                </tr>
+                            </tbody>        
+                        </table>
+                    </div>
+                </div> <!-- tm-section -->        
+            </div>
+
+
+            <div class="container-fluid">
+
+                <div class="row ">
+                    <div id="tm-section-7" class="tm-section">
+                        <div class="col-md-12">
+                            <h1 class="text-xs-center blue-text tm-page-2-title">Tour-Guide & Car-Renting</h1>
+                            <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">
+                               Let us offer you warm service and give you a wondering trip experience! <br>
+
+                            </p>
+                            <img src="http://i2.muimg.com/597066/ae93bd22115ab259.jpg" class="img-fluid tm-banner-img" alt="Image">
+                            <img src="http://i2.muimg.com/597066/fc1aa3c16da0abeb.jpg" class="img-fluid tm-banner-img" alt="Image">
+                            <img src="http://i2.muimg.com/597066/5d57f61cbba5add4.png" class="img-fluid tm-banner-img" alt="Image">
+                            <img src="http://i2.muimg.com/597066/791861ed8fa4b61d.png" class="img-fluid tm-banner-img" alt="Image">
+                            <img src="http://i2.muimg.com/597066/d17bb15a1b1918e2.png" class="img-fluid tm-banner-img" alt="Image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="tm-section" id="tm-section-8">
+                        <div class="col-md-12">
+                            <p class="text-left tm-description">
+                                Our Tour Guide can offer chinese services and English service, if you want other language, we can also offer, and price is appropriate, which is acceptable by most of people who visit us. We sure to offer you the best experience and let you know much more about the city, you will exactly fall in love with the beautiful city near the seashore.
+                            </p>
+                            <p class="text-left tm-description">
+                                We will never offer any shopping services, and all the shopping activity will be taken by yourselves, our tour guide will just recommand you suitable place for shopping, and we offer you car-renting services, which will easy for you to follow the route we recommanded without considering the transportation problem.
+                            </p>
+                            <div class="tm-flex-center">
+                                <a href="#tm-section-9" class="btn btn-default btn-lg tm-gray-btn">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="tm-section" id="tm-section-9">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h3 class="blue-text">Price List of our qualified Services:</h3>
+
+                            <table class="table table-striped tm-full-width-large-table">
+                                <thead>
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Service Item</th>
+                                    <th>Prices</th>
+                                    <th>Book Now</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Tour Guide Service(Chinese)</td>
+                                    <td>¥100/day</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>English Traslation</td>
+                                    <td>¥230/day</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Car Renting(No driver)</td>
+                                    <td>¥150/day(At Least)</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Car Renting(With driver)</td>
+                                    <td>¥280/day(At Least)</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Order</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Airport Pick-up/Send-back</td>
+                                    <td>¥80/time</td>
+                                    <td><a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-lg btn-success smoothScroll wow fadeInUp" data-wow-delay="1.0s">Order</a></td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- tm-section -->
+                </div>
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div id="tm-section-11" class="tm-section">
+                            <div class="col-md-12">
+                                <h1 class="text-xs-center blue-text tm-page-2-title">TsingsTao's Map</h1>
+                                <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">
+                                    Beautiful seashore and fasinating travelling experience. <br>
+                                <div id="container2"></div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <p class="text-xs-center tm-footer-text">Copyright &copy; 2017 Henry Fordham</p>
+                </div>
+            </div>
+        </div> <!-- .container -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content modal-popup">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title"></h2>
+          <h2 class="modal-title"></h2>
+          <h2 class="modal-title"></h2>
+          <h2 class="modal-title"></h2>
+        </div>
+        <form action="#" method="post">
+          <br><br><br><br><br>
+          <br><br><br><br><br>
+        </form>
+
+        <h2 class="modal-title">Please Pay ¥30 by Alipay.</h2>
+      </div>
+  </div>
+</div>
+        <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+        <script src="js/MyJs.js"></script>
+
+        <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->           
+
+        <!-- Templatemo scripts -->
+        <script>     
+         
+            $(document).ready(function(){
+                var mobileTopOffset = 54;
+                var tabletTopOffset = 74;
+                var desktopTopOffset = 79;
+                var topOffset = desktopTopOffset;
+
+                if($(window).width() <= 767) {
+                    topOffset = mobileTopOffset;
+                }
+                else if($(window).width() <= 991) {
+                    topOffset = tabletTopOffset;
+                }
+              
+                /* Single page nav
+                -----------------------------------------*/
+                $('#tmNavbar').singlePageNav({
+                    'currentClass' : "active",
+                    offset : topOffset,
+                    'filter': ':not(.external)'
+                }); 
+
+                if($(window).width() < 570) {
+                    $('.tm-full-width-large-table').addClass('table-responsive');
+                }
+                else {
+                    $('.tm-full-width-large-table').removeClass('table-responsive');   
+                }
+              
+
+                /* Collapse menu after click 
+                -----------------------------------------*/
+                $('#tmNavbar a').click(function(){
+                    $('#tmNavbar').collapse('hide');
+                });
+                /* Handle nav offset & table responsive upon window resize
+                --------------------------------------------------------------*/
+                $(window).resize(function(){
+                    
+                    if($(window).width() < 768) {
+                        topOffset = mobileTopOffset;
+                    } 
+                    else if($(window).width() <= 991) {
+                        topOffset = tabletTopOffset;
+                    }
+                    else {
+                        topOffset = desktopTopOffset;
+                    }
+
+                    $('#tmNavbar').singlePageNav({
+                        'currentClass' : "active",
+                        offset : topOffset,
+                        'filter': ':not(.external)'
+                    });
+
+                    if($(window).width() < 570) {
+                        $('.tm-full-width-large-table').addClass('table-responsive');
+                    }
+                    else {
+                        $('.tm-full-width-large-table').removeClass('table-responsive');   
+                    }
+                });
+            });
+
+        </script>    
+    </body>
+</html>

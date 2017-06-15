@@ -1,0 +1,240 @@
+<!Doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+		#daohang{
+			width: 29.7%;
+			height:inherit;
+			float: left;
+			display: block;
+			position: absolute;
+			box-shadow:8px 0px 100px #666;
+			border-right: 1px solid #B7B6B6;
+			
+		}
+		#allmap{
+			width: 70%;
+			height:500px;
+			float: right;
+			display: block;
+			
+		}
+		#div1{
+			height: 100px;
+			background-color:#D5D5D5;
+			border-bottom: 2px solid #B7B6B6;
+		}
+		#div2{
+			height: 70px;
+			background-color:#F3F1F1;
+			border-bottom: 2px solid #B7B6B6;
+		}
+		#div2:hover{
+			background-color:#D5D5D5;
+		}
+		#div3{
+			height: 70px;
+			background-color: #F3F1F1;
+		}
+		#div3:hover{
+			background-color:#D5D5D5;
+		}
+		
+		.hide {
+	text-align: center;
+	margin-top: 3em;
+	}
+		.hide a{
+		text-align: center;
+		font-size: 14px;
+		text-decoration: none;
+		padding: 13px 30px;
+		font-weight: 700;
+		color: #ffffff;
+		background: #39c9da;
+		border-radius: 5px;
+	}
+		.hide a:hover{
+		color:#39c9da;
+		background:#4b4a4b;
+		text-decoration: none;
+		transition: .5s all;
+		-webkit-transition: .5s all;
+		-o-transition: .5s all;
+		-ms-transition: .5s all;
+		-moz-transition: .5s all;
+	}
+		#r-result{
+			width: 70%;
+			height:inherit;
+			float: right;
+			display: block;
+			
+		}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aQ1ZiMSB7DoVK4xHZ3lFAYI8hOiG2uGv"></script> 
+    
+    <title>Map</title>
+</head>
+<body>
+   <div id="daohang">
+   	<div id="div1">
+   		<img src="timg (1).png" alt="" style="width:15%;height: 80px;margin-top: 5px;margin-left: 5px ">
+   		<p style="width: 30%;float: right;margin-right: 100px">City——</p>
+   		<p style="width: 30%;float: right;margin-right: 50px;margin-top: -24px;">Qingdao</p>
+   		
+   	</div>
+   	<div id="div2" onClick="showorhide()" >
+   		<p style="width: 90%;float: right;margin-right: 10px">Eight Great Passes > sea-water baths > May Fourth Square</p>
+   	</div>
+   	<div id="div3" onClick="showorhide2()">
+   		<p style="width: 90%;float: right;margin-right: 10px">trestle bridge > firewood yard > Catholic Church  </p>
+   	</div>
+   	<div class="hide" ><a href="#middle" onClick="hideway()" >hide the way</a></div>
+   </div>
+    <div id="allmap" ></div>
+    <div id="r-result"></div>
+</body>
+</html>
+<script src="jquery.js" type="application/javascript"></script>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");            
+    map.centerAndZoom("青岛",14);                
+    map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+    map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+var polyline = new BMap.Polyline([
+		new BMap.Point(120.320814,36.067778),
+		new BMap.Point(120.3257,36.068064),
+		new BMap.Point(120.325084,36.077191),
+		new BMap.Point(120.325345,36.071561),
+		new BMap.Point(120.335226,36.067411),
+		new BMap.Point(120.342947,36.064935),
+		new BMap.Point(120.348786,36.063801),
+		new BMap.Point(120.356467,36.070321),
+	
+	
+	], {strokeColor:"blue", strokeWeight:10, strokeOpacity:0.5});   //创建折线
+	
+	map.addOverlay(polyline);   //增加折线
+	polyline.hide(); 
+	var polyline2 = new BMap.Polyline([
+		new BMap.Point(120.35794,36.060343),
+		new BMap.Point(120.391734,36.067637),
+		new BMap.Point(120.398939,36.064815),
+		
+		new BMap.Point(120.407499,36.070635),
+		new BMap.Point(120.429813,36.071802),
+		new BMap.Point(120.472429,36.10075),
+	
+	], {strokeColor:"blue", strokeWeight:10, strokeOpacity:0.5});   //创建折线
+	map.addOverlay(polyline2);   //增加折线
+	polyline2.hide(); 
+	function showorhide(){
+		polyline.show();
+	}
+	function hideway(){
+		polyline.hide();
+		polyline2.hide();
+	}
+	function showorhide2(){
+		polyline2.show();
+	
+	}
+	 
+  // 添加带有定位的导航控件
+  var navigationControl = new BMap.NavigationControl({
+    // 靠左上角位置
+    anchor: BMAP_ANCHOR_TOP_LEFT,
+    // LARGE类型
+    type: BMAP_NAVIGATION_CONTROL_LARGE,
+    // 启用显示定位
+    enableGeolocation: true
+  });
+  map.addControl(navigationControl);
+  // 添加定位控件
+  var geolocationControl = new BMap.GeolocationControl();
+  geolocationControl.addEventListener("locationSuccess", function(e){
+    // 定位成功事件
+    var address = '';
+    address += e.addressComponent.province;
+    address += e.addressComponent.city;
+    address += e.addressComponent.district;
+    address += e.addressComponent.street;
+    address += e.addressComponent.streetNumber;
+    alert("当前定位地址为：" + address);
+  });
+  geolocationControl.addEventListener("locationError",function(e){
+    // 定位失败事件
+    alert(e.message);
+  });
+  map.addControl(geolocationControl);
+	
+	
+
+	 var transit = new BMap.DrivingRoute(map, {
+		renderOptions: {
+			map: map,
+			panel: "r-result",
+			enableDragging : true //起终点可进行拖拽
+		},  
+	});
+	transit.search("栈桥","八大关");
+	
+	
+	var myKeys = ["酒店", "加油站","宾馆",];
+	var local = new BMap.LocalSearch(map, {
+		renderOptions:{map: map, panel:"r-result"},
+		pageCapacity:5
+	});
+	local.searchInBounds(myKeys, map.getBounds());
+	var marker = new BMap.Marker(new BMap.Point(120.326582,36.065444)); // 创建点
+	marker.setAnimation(BMAP_ANIMATION_BOUNCE); 
+	marker.addEventListener("click",attribute);
+	map.addOverlay(marker);    //增加点
+	
+	function attribute(){
+		var p = marker.getPosition();  //获取marker的位置
+		window.location.href="../栈桥.html";    
+	}
+	var marker2 = new BMap.Marker(new BMap.Point(120.391738,36.067652)); // 创建点
+	marker2.setAnimation(BMAP_ANIMATION_BOUNCE); 
+	marker2.addEventListener("click",attribute2);
+	map.addOverlay(marker2);    //增加点
+	
+	function attribute2(){
+		var p = marker2.getPosition();  //获取marker的位置
+		window.location.href="../五四广场.html";    
+	}
+	var marker3 = new BMap.Marker(new BMap.Point(120.25126,35.964533)); // 创建点
+	marker3.setAnimation(BMAP_ANIMATION_BOUNCE); 
+	marker3.addEventListener("click",attribute3);
+	map.addOverlay(marker3);    //增加点
+	
+	function attribute3(){
+		
+		window.location.href="../金沙滩.html";    
+	}
+
+	var marker4 = new BMap.Marker(new BMap.Point(120.404173,36.064082)); // 创建点
+	marker4.setAnimation(BMAP_ANIMATION_BOUNCE); 
+	marker4.addEventListener("click",attribute4);
+	map.addOverlay(marker4);    //增加点
+	
+	function attribute4(){
+		
+		window.location.href="../天主教堂.html";    
+	}
+	var marker5 = new BMap.Marker(new BMap.Point(120.357644,36.059717)); // 创建点
+	marker5.setAnimation(BMAP_ANIMATION_BOUNCE); 
+	marker5.addEventListener("click",attribute5);
+	map.addOverlay(marker5);    //增加点
+	
+	function attribute5(){
+		
+		window.location.href="../八大关.html";    
+	}
+</script>

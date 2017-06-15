@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+.g2{
+	width: 546px;
+	height: 283px;
+	position: absolute;
+	left: 516px;
+	top: 410px;
+}
+.g3{width=282px;
+	height=257px;
+	position: absolute;
+	width: 265px;
+	height: 224px;
+	left: 525px;
+	top: 151px;
+}
+.g4{width=282px;
+	height=257px;
+	position: absolute;
+	left: 554px;
+	width: 369px;
+	height: 93px;
+	top: 16px;
+}
+.g5{width=500px;
+	height=257px;
+	position: absolute;
+	width: 254px;
+	height: 220px;
+	left: 804px;
+	top: 153px;
+	
+}
+.g6{width=282px;
+	height=257px;
+	position: absolute
+}
+.g7{width=500px;
+	height=257px;
+	position: absolute;
+	left: 517px;
+	width: 540px;
+	height: 59px;
+	top: 734px;
+	
+}
+
+#ww1{
+	font: Segoe, Segoe UI, DejaVu Sans, Trebuchet MS, Verdana," sans-serif";
+	font-size: 50px
+}
+#ww3{
+	font: Segoe, Segoe UI, DejaVu Sans, Trebuchet MS, Verdana," sans-serif";
+	font-size: 20px;
+	font-family: acme
+}
